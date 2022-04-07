@@ -11,7 +11,7 @@ local EzLauncher = {
 	TextLabel = Instance.new("TextLabel"),
 	UICorner_2 = Instance.new("UICorner"),
 	ContentFrame = Instance.new("Frame"),
-	EzHubStatusFrame = Instance.new("Frame"),
+	HubStatusFrame = Instance.new("Frame"),
 	Status = Instance.new("TextLabel"),
 	StatusName = Instance.new("TextLabel"),
 	EzAPIStatusFrame = Instance.new("Frame"),
@@ -140,7 +140,7 @@ EzLauncher.StatusName.BackgroundTransparency = 1.000
 EzLauncher.StatusName.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName.Font = Enum.Font.SourceSans
-EzLauncher.StatusName.Text = "Ez Hub"
+EzLauncher.StatusName.Text = "LogicX"
 EzLauncher.StatusName.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName.TextSize = 14.000
 
@@ -172,7 +172,7 @@ EzLauncher.StatusName_2.BackgroundTransparency = 1.000
 EzLauncher.StatusName_2.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName_2.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName_2.Font = Enum.Font.SourceSans
-EzLauncher.StatusName_2.Text = "Ez API"
+EzLauncher.StatusName_2.Text = "LogicX API"
 EzLauncher.StatusName_2.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName_2.TextSize = 14.000
 
@@ -472,7 +472,7 @@ for i,v in pairs(newsData) do
 	local newsOrder = v[1] * -1;	-- This is to make it sort in a different order
 	local newsText = v[2];
 
-	if newsText == "@DIVIDER" then
+	if newsText == "@Intersel" then
 		local div = EzLauncher.NewsDivider:Clone();
 		div.LayoutOrder = newsOrder;
 		div.Parent = EzLauncher.NewsSection.ContentFrame;
@@ -490,9 +490,9 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
-EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
-EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["LogicX Hub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["LogicX API"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["LogicX Launcher"];
 
 if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
@@ -549,8 +549,8 @@ end)
 --------------------------------------------------------------------
 -- Apply the launcher data: latest version
 
--- List of accouonts that can launch Ez Hub regardless of the status
--- Note that the status is just to prevent users from executing Ez Hub when it is in testing/broken stages
+-- List of accouonts that can launch LogicX Hub regardless of the status
+-- Note that the status is just to prevent users from executing LogicX Hub when it is in testing/broken stages
 -- Therefore there is no need for any type of secure whitelist
 local allowedOverrideUsers = {
 	2626915991,
